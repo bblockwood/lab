@@ -11,7 +11,7 @@ if (Sys.info()[["user"]] == "daniellee") {
   datapath <- "/Users/daniellee/Dropbox/RA_work/data/opportunity_atlas/input"
 }
 if (Sys.info()[["user"]] == "benlo") {
-  datapath <- "/Users/bblockwood/Dropbox/Research/RAs/RA_work/data/opportunity_atlas/input"
+  datapath <- "/Users/benlo/Dropbox/Research/RAs/RA_work/data/opportunity_atlas/input"
 }
 
 data <- paste(datapath,"/county_outcomes_simple.csv",sep="")
