@@ -5,13 +5,15 @@ library(tmap)
 library(tmaptools)
 library(sf)
 library(leaflet)
+library(htmlwidgets)
+library(mapview)
 
 #change to user directory
 if (Sys.info()[["user"]] == "daniellee") {
   datapath <- "/Users/daniellee/Dropbox/RA_work/data/opportunity_atlas/input"
 }
-if (Sys.info()[["user"]] == "benlo") {
-  datapath <- "/Users/benlo/Dropbox/Research/RAs/RA_work/data/opportunity_atlas/input"
+if (Sys.info()[["user"]] == "") {
+  datapath <- "/Users/bblockwood/Dropbox/RA_work/data/opportunity_atlas/input"
 }
 
 data <- paste(datapath,"/county_outcomes_simple.csv",sep="")
@@ -40,5 +42,11 @@ cacopa <- inner_join(usageo, IncData, by = NULL)
 head(cacopa)
 View(as_data_frame(cacopa))
 tmap_mode("view")
-qtm(cacopa, fill="household_income_mean_percentile_rank",fill.palette="RdBu")
-
+usmap <- tm_shape(cacopa) + 
+  tm_fill("household_income_mean_percentile_rank", title="Household Income Mean Percentile Rank", palette = "RdBu") +
+  tm_borders(alpha=.5)
+usmap <- tmap_leaflet(usmap)
+usmap <- usmap %>% 
+  fitBounds(-124,24,-60,49)
+usmap
+mapshot(usmap,file="map.pdf")
