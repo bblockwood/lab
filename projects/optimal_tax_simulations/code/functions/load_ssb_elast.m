@@ -20,11 +20,7 @@ ssbIncElast = incElast0 + (incUS/100000).*incElastz;
 ssbElastUnc = max(ssbElastUnc,0.5); % only happens at pctile 0.9995 -- prevents negative elast at top incomes
 ssbIncElast = max(ssbIncElast,0);
 
-% Load SSB price from data
-ssbPrice = load_price()/100; % dollars per ounce (will remain fixed pre-tax price)
-
-ssbExpend = ssbConsumpUS.*ssbPrice; % Convert SSB consumption from ounces into dollars
-ssbBudgetShare = trapz(F,ssbExpend)./trapz(F,consumpUS);
+ssbBudgetShare = trapz(F,ssbConsumpUS)./trapz(F,consumpUS);
 ssbElast = ssbElastUnc + ssbIncElast*ssbBudgetShare./(1-mtrUS); % compensated elast
 
 
