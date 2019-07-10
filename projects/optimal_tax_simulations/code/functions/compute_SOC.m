@@ -3,7 +3,7 @@ function SOC = compute_SOC(prim,eqbm)
 
 v_ss = compute_v_ss(prim,eqbm);
 v_sc = compute_v_sc(prim,eqbm);
-v_cc = compute_v_sc(prim,eqbm);
+v_cc = compute_v_cc(prim,eqbm);
 
 p = prim.ssbPrice;
 t = eqbm.soda_tax;
