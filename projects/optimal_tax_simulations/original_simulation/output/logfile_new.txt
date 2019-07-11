@@ -1,0 +1,43 @@
+(gamma,ssbElast) = 0,3)
+(gamma,ssbElast) = 0,1.2154)
+(gamma,ssbElast) = 0,0.5)
+(gamma,ssbElast) = 0,0.25)
+(gamma,ssbElast) = 0.01,3)
+(gamma,ssbElast) = 0.01,1.2154)
+(gamma,ssbElast) = 0.01,0.5)
+(gamma,ssbElast) = 0.01,0.25)
+(gamma,ssbElast) = 0.02,3)
+(gamma,ssbElast) = 0.02,1.2154)
+(gamma,ssbElast) = 0.02,0.5)
+(gamma,ssbElast) = 0.02,0.25)
+(gamma,ssbElast) = 0.03,3)
+(gamma,ssbElast) = 0.03,1.2154)
+(gamma,ssbElast) = 0.03,0.5)
+(gamma,ssbElast) = 0.03,0.25)
+(gamma,ssbElast) = 0.04,3)
+(gamma,ssbElast) = 0.04,1.2154)
+(gamma,ssbElast) = 0.04,0.5)
+(gamma,ssbElast) = 0.04,0.25)
+[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
+output size by setting the figure's PaperPosition property, use the 'print' command with either
+the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
+Preview' window.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_comp_statics', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\functions\plot_comp_statics.m', 51)" style="font-weight:bold">plot_comp_statics</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\functions\plot_comp_statics.m',51,0)">line 51</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m', 159)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m',159,0)">line 159</a>)] 
+[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
+output size by setting the figure's PaperPosition property, use the 'print' command with either
+the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
+Preview' window.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m', 198)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m',198,0)">line 198</a>)] 
+[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
+output size by setting the figure's PaperPosition property, use the 'print' command with either
+the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
+Preview' window.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m', 223)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m',223,0)">line 223</a>)] 
+Finished.
