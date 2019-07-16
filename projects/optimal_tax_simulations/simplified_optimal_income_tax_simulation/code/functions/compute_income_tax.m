@@ -8,10 +8,12 @@ f = derivative(prim.F,eqbm.income); % income density
 dzdt = compute_labor_supply_response(prim,eqbm); % compensated earnings response to dt
 msww = compute_mswws(prim,eqbm);
 
+% Extend income distribution and MSWWs to zero for purposes of integration
 FExt = [0; prim.F];
 mswwExt = interpcon(eqbm.income,msww,[0;eqbm.income],'linear','extrap');
 GExt = cumtrapz(FExt,mswwExt);
 G = GExt(2:end);
+G = G./G(end); % normalize so G integrates to 1 across full income distribution.
 
 dM = G - prim.F; % mechanical effect, dim Nx1
 mtr_raw = -1./(f.*dzdt) .* dM;
