@@ -71,7 +71,7 @@ ubound = 3*10^5;
 xlim([0 ubound]);
 ylim([-.1 1]);
 legend({'Baseline','Weak redistributive preferences','Strong redistributive preferences',...
-    'Redistributive preferences rationalize U.S. income taxes'},'location','northeast');
+    'Redistributive preferences rationalize U.S. income taxes'},'location','southeast');
 % set(gca,'fontsize',14);
 % 
 xlabel('Wage income z');
