@@ -1,13 +1,13 @@
 function run_simulations()
-% Run simulations for Allcott, Lockwood, Taubinsky "Regressive Sin Taxes"
+% Simulate optimal nonlinear income tax using PSZ income distribution.
 
 clear all;
 addpath(genpath('./functions/'));
 addpath(genpath('../../../../lib/matlab/'));
 
 global DATADIR OUTPUT VERBOSE LABORELAST; 
-DATADIR = '../../data'; 
-OUTPUT = '../../output';
+DATADIR = '../data'; 
+OUTPUT = '../output';
 VERBOSE = false; % report verbose logging to console?
 
 % global parameters
@@ -71,7 +71,7 @@ ubound = 3*10^5;
 xlim([0 ubound]);
 ylim([-.1 1]);
 legend({'Baseline','Weak redistributive preferences','Strong redistributive preferences',...
-    'Redistributive preferences rationalize U.S. income taxes'},'location','northwest');
+    'Redistributive preferences rationalize U.S. income taxes'},'location','northeast');
 % set(gca,'fontsize',14);
 % 
 xlabel('Wage income z');
