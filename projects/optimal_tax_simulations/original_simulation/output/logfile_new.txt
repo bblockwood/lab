@@ -1,3 +1,73 @@
+{Undefined function or variable 'ksr'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('calibrate_primitives', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\functions\calibrate_primitives.m', 23)" style="font-weight:bold">calibrate_primitives</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\functions\calibrate_primitives.m',23,0)">line 23</a>)
+r = ksr(F(2:end),mtrRaw); % chooses optimal bandwidth automatically
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m', 71)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m',71,0)">line 71</a>)
+        [r.prim,eqbm_US] = calibrate_primitives(r.spec,internalizedHealthCost);
+} 
+uiopen('C:\Users\Afras Sial\AppData\Local\Temp\Temp1_ksr.zip\ksr.m',1)
+{Error using publish
+Unable to find "C:\Users\Afras Sial\AppData\Local\Temp\Temp1_ksr.zip\ksr.m".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mdbpublish', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\codetools\mdbpublish.m', 55)" style="font-weight:bold">mdbpublish</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\codetools\mdbpublish.m',55,0)">line 55</a>)
+outputPath = publish(file, options);
+} 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('open', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\general\open.m', 52)" style="font-weight:bold">open</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\general\open.m',52,0)">line 52</a>)
+NAME must be a character vector or string scalar.
+} 
+help ksr
+
+ksr not found.
+
+Use the Help browser search field to <a href="matlab:docsearch ksr">search the documentation</a>, or
+type "<a href="matlab:help help">help help</a>" for help command options, such as help for methods.
+
+help ksr
+  <strong>ksr</strong>   Kernel smoothing regression
+ 
+  r=ksr(x,y) returns the Gaussian kernel regression in structure r such that
+    r.f(r.x) = y(x) + e
+  The bandwidth and number of samples are also stored in r.h and r.n
+  respectively.
+ 
+  r=ksr(x,y,h) performs the regression using the specified bandwidth, h.
+ 
+  r=ksr(x,y,h,n) calculates the regression in n points (default n=100).
+ 
+  Without output, ksr(x,y) or ksr(x,y,h) will display the regression plot.
+ 
+  Algorithm
+  The kernel regression is a non-parametric approach to estimate the
+  conditional expectation of a random variable:
+ 
+  E(Y|X) = f(X)
+ 
+  where f is a non-parametric function. Based on the kernel density
+  estimation, this code implements the Nadaraya-Watson kernel regression
+  using the Gaussian kernel as follows:
+ 
+  f(x) = sum(kerf((x-X)/h).*Y)/sum(kerf((x-X)/h))
+ 
+  See also gkde, <a href="matlab:help ksdensity">ksdensity</a>
+
+run_simulations
+[Warning: File not found or permission denied] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m', 17)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m',17,0)">line 17</a>)] 
+{Undefined function or variable 'interpcon'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('calibrate_primitives', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\functions\calibrate_primitives.m', 24)" style="font-weight:bold">calibrate_primitives</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\functions\calibrate_primitives.m',24,0)">line 24</a>)
+mtrUS = interpcon(r.x,r.f,F,'linear','extrap');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m', 71)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m',71,0)">line 71</a>)
+        [r.prim,eqbm_US] = calibrate_primitives(r.spec,internalizedHealthCost);
+} 
+run_simulations
+<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\general\private\parsedirs.m',44,1)">44  </a>cdirs(cellfun('isempty', cdirs)) = [];
+if system_dependent('IsDebugMode')==1, dbquit; end
+run_simulations
+[Warning: File not found or permission denied] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m', 17)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m',17,0)">line 17</a>)] 
 (gamma,ssbElast) = 0,3)
 (gamma,ssbElast) = 0,1.2154)
 (gamma,ssbElast) = 0,0.5)
@@ -24,20 +94,22 @@ the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' opt
 Preview' window.] 
 [> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
   In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_comp_statics', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\functions\plot_comp_statics.m', 51)" style="font-weight:bold">plot_comp_statics</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\functions\plot_comp_statics.m',51,0)">line 51</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m', 159)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m',159,0)">line 159</a>)] 
-[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
-output size by setting the figure's PaperPosition property, use the 'print' command with either
-the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
-Preview' window.] 
-[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m', 198)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m',198,0)">line 198</a>)] 
-[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
-output size by setting the figure's PaperPosition property, use the 'print' command with either
-the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
-Preview' window.] 
-[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m', 223)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\code\run_simulations.m',223,0)">line 223</a>)] 
-Finished.
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_comp_statics', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\functions\plot_comp_statics.m', 51)" style="font-weight:bold">plot_comp_statics</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\functions\plot_comp_statics.m',51,0)">line 51</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m', 159)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m',159,0)">line 159</a>)] 
+{Error using checkArgsForHandleToPrint
+Handle input argument contains nonhandle values.
+
+Error in checkArgsForHandleToPrint
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print>LocalCreatePrintJob', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 100)" style="font-weight:bold">print>LocalCreatePrintJob</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',100,0)">line 100</a>)
+handles = checkArgsForHandleToPrint(0, varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 38)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',38,0)">line 38</a>)
+[pj, inputargs] = LocalCreatePrintJob(varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m', 198)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m',198,0)">line 198</a>)
+print(fig,fname,'-dpdf');
+} 
+opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',100,0)
+opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\original_simulation\code\run_simulations.m',198,0)
+uiopen('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',1)

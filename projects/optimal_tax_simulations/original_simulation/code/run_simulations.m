@@ -3,7 +3,7 @@ function run_simulations()
 
 clear all;
 addpath(genpath('./functions/'));
-addpath(genpath('../../../lib/matlab/'));
+addpath(genpath('../../../../lib/matlab/'));
 
 global DATADIR OUTPUT VERBOSE LABORELAST; 
 DATADIR = '../data'; 
