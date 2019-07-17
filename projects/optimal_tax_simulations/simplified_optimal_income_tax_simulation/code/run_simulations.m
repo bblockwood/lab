@@ -33,10 +33,10 @@ USPop = 0.311; % U.S. adult equivalents, in billions (see text)
 
 % List of specifications to be run in the following simulations
 specs = {...
-    {'baseline','Baseline'}... 
-    {'weakRedist','Weaker redistributive preferences'}... 
-    {'strongRedist','Stronger redistributive preferences'}... 
-    {'inverseOpt','Redistributive preferences rationalize U.S. income tax'}... 
+    {'baseline',1,@calibrate_paretoWts.compute_paretoWts}... 
+    {'weakRedist',0.25,@calibrate_paretoWts.compute_paretoWts}... 
+    {'strongRedist',4,@calibrate_paretoWts.compute_paretoWts}... 
+    {'inverseOpt','',@InvOptWts.compute_paretoWts}... 
 };
 
 
@@ -48,12 +48,16 @@ specRange = 1:length(specs);
         clear r;
         iSpec = specs{iR};
         r.spec = iSpec{1}; % specification name
-        r.desc = [num2str(iR) '. ' iSpec{2}]; % specification description (for Tex table)
         
-        [r.prim,eqbm_US] = calibrate_primitives(r.spec);
+        [r.prim,r.eqbm] = calibrate_primitives();
+
+        % Calibrate Pareto Weights
+        inequality_aversion_parameter = iSpec{2};
+        calibration_fn = iSpec{3};
+        r.prim.paretoWts = calibration_fn(inequality_aversion_parameter,r.prim,r.eqbm);
         
         % Compute optimal income tax
-        r.eqbmOptIncTax = compute_optimal_taxes(r.prim,eqbm_US);
+        r.eqbmOptIncTax = compute_optimal_taxes(r.prim,r.eqbm);
         
         Results{iR} = r;
         
@@ -63,7 +67,8 @@ specRange = 1:length(specs);
 
 %% Plot marginal tax rate across income distribution
 for i = 1:4
-    plot(Results{i}.eqbmOptIncTax.income,Results{i}.eqbmOptIncTax.inc_mtrs,'Marker','o','Markersize',5);
+    plot(Results{i}.eqbmOptIncTax.income,Results{i}.eqbmOptIncTax.inc_mtrs,...
+        'Marker','o','Markersize',5);
     hold on;
 end
 
