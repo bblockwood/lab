@@ -12,7 +12,14 @@ gamma = compute_bias_soda(prim,eqbm);
 eta = compute_inc_effect_soda(prim,eqbm);
 e = prim.externality;
 
-dM = mean(cumtrapz(prim.F,msww_hat),2) - prim.F; % mechanical effect, dim Nx1
+% Extend income distribution and MSWWs to zero for purposes of integration
+FExt = [0; prim.F];
+msww_hatExt = interpcon(eqbm.income,msww_hat,[0;eqbm.income],'linear','extrap');
+GExt = cumtrapz(FExt,msww_hatExt);
+G = GExt(2:end);
+G = G./G(end); % normalize so G integrates to 1 across full income distribution.
+
+dM = G - prim.F; % mechanical effect, dim Nx1
 dB = mean(eta.*(eqbm.soda_tax - msww.*gamma - e),2); % effect through ssb consump chng
 mtr_raw = -1./(f.*dzdt) .* dM - dB;
 mtr_raw = min(max(mtr_raw,-0.1),0.99); % limit for convergence
