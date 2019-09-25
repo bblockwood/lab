@@ -24,6 +24,7 @@ rev_requirement = trapz(F,incUS - consumpUS);
 grant_US = consumpUS(1);
 
 
+
 % CALIBRATE PARETO WEIGHTS 
 % Compute Pareto weights based on total consumption in US status quo (these stay fixed)
 
@@ -71,6 +72,19 @@ switch SPEC
 end
 
 
+% CALIBRATE ABILITY (WAGE) DISTRIBUTION
+wage = (incUS.^(1./LABORELAST)./(1-mtrUS)).^(LABORELAST./(1+LABORELAST));
+
+% Add zero-wage cell with 100% tax rate
+prim.wage = [0; wage];
+F = [F(1)/2; F(1)/2; F(2:end)];
+incUS = [0;incUS];
+consumpUS = [grant_US; consumpUS];
+% mtrUS = [1;mtrUS];
+mtrUS = interpcon(F(2:end),mtrUS,F,'linear','extrap');
+paretoWts = interpcon(F(2:end),paretoWts,F,'linear','extrap');
+
+
 % STORE VALUES IN prim AND eqbm STRUCTURES
 
 % PRIM
@@ -92,9 +106,7 @@ eqbm.grant = grant_US;
 eqbm.msww = zeros(N,1); % marginal social welfare weights (initialize to zero)
 
 
-% Calibrate ability (wage) distribution
-wage = (incUS.^(1./LABORELAST)./(1-mtrUS)).^(LABORELAST./(1+LABORELAST));
-prim.wage = wage;
+
 
 
 end

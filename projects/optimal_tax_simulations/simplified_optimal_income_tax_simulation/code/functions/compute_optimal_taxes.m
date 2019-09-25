@@ -14,6 +14,7 @@ while (policy_change > 1e-4) || (idx < 5)
     
     % 2. Update optimal income tax
     eqbm.inc_mtrs = smooth(compute_income_tax(prim,eqbm));
+    eqbm.inc_mtrs = [1; eqbm.inc_mtrs(2:end)]; % impose 100% tax for zero-wage cell
     inc_mtrs_change = norm(eqbm.inc_mtrs - inc_mtrs_old);
     inc_mtrs_old = eqbm.inc_mtrs;
     
@@ -29,5 +30,7 @@ while (policy_change > 1e-4) || (idx < 5)
     if idx > 500, warning('exceeded iteration limit'); break; end
     
 end
+
+eqbm.F = prim.F;
 
 end

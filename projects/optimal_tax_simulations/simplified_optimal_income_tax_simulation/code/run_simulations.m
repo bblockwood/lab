@@ -60,9 +60,85 @@ specRange = 1:length(specs);
     end
     
     
+%% Plot MSWWs across income distribution
+for i = specRange
+    plot(Results{i}.eqbmOptIncTax.income,Results{i}.eqbmOptIncTax.msww,'Marker','o','Markersize',5);
+    hold on;
+end
+
+ubound = 3*10^5;
+xlim([0 ubound]);
+ylim([0 6]);
+legend({'Baseline','Weak redistributive preferences','Strong redistributive preferences',...
+    'Redistributive preferences rationalize U.S. income taxes'},'location','southeast');
+set(gca,'fontsize',8);
+
+xlabel('Income z');
+ylabel('Marginal social welfare weights');
+
+fname = [OUTPUT '/Figures/mswws.pdf'];
+fig = gcf;
+fig.PaperPositionMode = 'auto';
+fig_pos = fig.PaperPosition;
+fig.PaperSize = [fig_pos(3) fig_pos(4)];
+
+print(fig,fname,'-dpdf');
+close;    
+   
+    
+%% Plot income CDF at optimum
+for i = specRange
+    plot(Results{i}.eqbmOptIncTax.income,Results{i}.eqbmOptIncTax.F,'Marker','o','Markersize',5);
+    hold on;
+end
+
+ubound = 3*10^5;
+xlim([0 ubound]);
+ylim([0 1]);
+legend({'Baseline','Weak redistributive preferences','Strong redistributive preferences',...
+    'Redistributive preferences rationalize U.S. income taxes'},'location','southeast');
+set(gca,'fontsize',8);
+
+xlabel('Income z');
+ylabel('F');
+
+fname = [OUTPUT '/Figures/income_cdf.pdf'];
+fig = gcf;
+fig.PaperPositionMode = 'auto';
+fig_pos = fig.PaperPosition;
+fig.PaperSize = [fig_pos(3) fig_pos(4)];
+
+print(fig,fname,'-dpdf');
+close;
+
+%% Plot consumption CDF at optimum
+for i = specRange
+    plot(Results{i}.eqbmOptIncTax.consump,Results{i}.eqbmOptIncTax.F,'Marker','o','Markersize',5);
+    hold on;
+end
+
+ubound = 3*10^5;
+xlim([0 ubound]);
+ylim([0 1]);
+legend({'Baseline','Weak redistributive preferences','Strong redistributive preferences',...
+    'Redistributive preferences rationalize U.S. income taxes'},'location','southeast');
+set(gca,'fontsize',8);
+
+xlabel('Consumption c');
+ylabel('F');
+
+fname = [OUTPUT '/Figures/consumption_cdf.pdf'];
+fig = gcf;
+fig.PaperPositionMode = 'auto';
+fig_pos = fig.PaperPosition;
+fig.PaperSize = [fig_pos(3) fig_pos(4)];
+
+print(fig,fname,'-dpdf');
+close;
+
 
 %% Plot marginal tax rate across income distribution
-for i = 1:4
+for i = specRange
     plot(Results{i}.eqbmOptIncTax.income,Results{i}.eqbmOptIncTax.inc_mtrs,'Marker','o','Markersize',5);
     hold on;
 end

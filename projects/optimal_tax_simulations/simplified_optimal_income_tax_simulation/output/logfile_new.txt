@@ -1,137 +1,29 @@
-<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\functions\compute_mswws.m',10,1)">10  </a>assert(norm(trapz(prim.F,msww) - 1) < 1e-3);
-alpha
-
-alpha =
-
-   0.00010413
-   9.1348e-05
-   8.3729e-05
-   7.7397e-05
-   7.1517e-05
-   6.6872e-05
-   6.2739e-05
-   5.9231e-05
-   5.6188e-05
-   5.3515e-05
-   5.1323e-05
-   4.9385e-05
-   4.7537e-05
-   4.5941e-05
-   4.4625e-05
-   4.3289e-05
-   4.2101e-05
-   4.0926e-05
-   3.9914e-05
-   3.8952e-05
-   3.8009e-05
-   3.7165e-05
-   3.6306e-05
-    3.548e-05
-   3.4683e-05
-   3.3911e-05
-   3.3191e-05
-   3.2476e-05
-   3.1795e-05
-   3.1142e-05
-   3.0493e-05
-   2.9803e-05
-   2.9175e-05
-    2.855e-05
-   2.7963e-05
-    2.741e-05
-   2.6876e-05
-   2.6341e-05
-   2.5814e-05
-   2.5316e-05
-   2.4826e-05
-   2.4336e-05
-   2.3858e-05
-   2.3397e-05
-   2.2947e-05
-   2.2512e-05
-   2.2092e-05
-   2.1685e-05
-   2.1274e-05
-   2.0882e-05
-   2.0488e-05
-   2.0125e-05
-   1.9766e-05
-   1.9411e-05
-    1.905e-05
-   1.8684e-05
-   1.8347e-05
-   1.8012e-05
-   1.7695e-05
-   1.7379e-05
-   1.7073e-05
-   1.6773e-05
-   1.6483e-05
-   1.6184e-05
-   1.5889e-05
-   1.5589e-05
-   1.5279e-05
-   1.4972e-05
-   1.4666e-05
-   1.4364e-05
-   1.4044e-05
-   1.3728e-05
-   1.3411e-05
-     1.31e-05
-   1.2783e-05
-   1.2469e-05
-   1.2154e-05
-   1.1832e-05
-   1.1513e-05
-    1.118e-05
-   1.0845e-05
-   1.0491e-05
-   1.0122e-05
-   9.7302e-06
-   9.3178e-06
-   8.8816e-06
-   8.4246e-06
-   7.9466e-06
-   7.4117e-06
-   6.8274e-06
-   6.1635e-06
-   5.3882e-06
-   4.4541e-06
-   3.2607e-06
-   2.5293e-06
-   2.3714e-06
-   2.2063e-06
-   2.0259e-06
-   1.8353e-06
-   1.6315e-06
-   1.4056e-06
-   1.1498e-06
-   8.3123e-07
-   6.3788e-07
-   5.9366e-07
-   5.4892e-07
-   5.0209e-07
-   4.4949e-07
-     3.95e-07
-    3.337e-07
-   2.6651e-07
-   1.8628e-07
-   1.4009e-07
-   1.2957e-07
-   1.1869e-07
-   1.0771e-07
-   9.6087e-08
-   8.3291e-08
-   6.9282e-08
-   5.4498e-08
-   3.7661e-08
-   1.1263e-08
-
-lamba
-{Undefined function or variable 'lamba'.
-} 
-lambda
-
-lambda =
-
-   2.6592e-05
-
+[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
+output size by setting the figure's PaperPosition property, use the 'print' command with either
+the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
+Preview' window.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 85)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',85,0)">line 85</a>)] 
+[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
+output size by setting the figure's PaperPosition property, use the 'print' command with either
+the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
+Preview' window.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 111)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',111,0)">line 111</a>)] 
+[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
+output size by setting the figure's PaperPosition property, use the 'print' command with either
+the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
+Preview' window.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 136)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',136,0)">line 136</a>)] 
+[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the
+output size by setting the figure's PaperPosition property, use the 'print' command with either
+the  '-bestfit' or '-fillpage' options, or use the 'Best fit' or 'Fill page' options on the 'Print
+Preview' window.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 162)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',162,0)">line 162</a>)] 
+Finished.
