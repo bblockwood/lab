@@ -49,11 +49,33 @@ classdef economy
             % Calibrates primitives of model
             
             obj.F = cumsum(status_quo.pmf);
-            N = length(status_quo.incUS);
             
-            % smooth empirical distributions
-            status_quo.incUS = smooth(status_quo.incUS,'lowess');
-            status_quo.consumpUS = smooth(status_quo.consumpUS,'lowess');
+            % Impose pareto tail at high incomes
+            zSum = status_quo.pmf .* status_quo.incUS;
+            for i = 1:length(status_quo.incUS)
+                zBar(i,1) = sum(zSum(i:end))/sum(status_quo.pmf(i:end));
+            end
+            target = zBar(89)./status_quo.incUS(89); % set benchmark
+
+            pmfAlt = [status_quo.pmf(1:89);status_quo.pmf(90:95)./3; ...
+                status_quo.pmf(90:95)./3;status_quo.pmf(90:95)./3; ...
+                status_quo.pmf(96:104);status_quo.pmf(105:3:end).*3];
+            incAlt = [status_quo.incUS(1:89);zeros(length(pmfAlt(90:end)),1)]; % the same at low & middle incomes
+            last = length(incAlt); % index of last cell
+            zSum = zeros(last,1);
+            incAlt(end) = status_quo.incUS(end)*.845; 
+            zSum(end) = pmfAlt(end) .* incAlt(end);
+            for i = last-1:-1:90
+                incAlt(i) = (sum(zSum(i-1:end)) / (target * sum(pmfAlt(i:end)))) / ...
+                    (1 - (pmfAlt(i) / (target * sum(pmfAlt(i:end)))));
+                zSum(i) = incAlt(i) * pmfAlt(i);
+            end
+                        
+            status_quo.consumpUS = interpcon(status_quo.incUS, ...
+                status_quo.consumpUS,incAlt,'linear','extrap');
+            status_quo.incUS = incAlt;
+            obj.F = cumsum(pmfAlt);
+            N = length(obj.F);
             
             % Calibrate US tax schedule
             % construct schedule of tax rates: d(z-c)/dz, with kernel
@@ -117,7 +139,7 @@ classdef economy
                 
                 disp([idx policy_change inc_mtrs_change]);
                 idx = idx+1;
-                if idx > 5000, warning('exceeded iteration limit'); break; end
+                if idx > 50000, warning('exceeded iteration limit'); break; end
                 
             end
             
@@ -126,7 +148,7 @@ classdef economy
         function [mtr_new, mtr_raw] = compute_income_tax(obj)
             % Computes schedule of optimal marginal tax rates for a given equilibrium.
             
-            mtr_step = 0.01; % to ensure convergence
+            mtr_step = 0.001; % to ensure convergence
             
             f = economy.derivative(obj.F,obj.income); % income density
             if f(1) < 0 % ensure positive density
@@ -145,9 +167,8 @@ classdef economy
             G = G./G(end); % normalize so G integrates to 1 across full income distribution.
             
             dM = G - obj.F; % mechanical effect, dim Nx1
-            denominator = smooth(f.*dzdt,'lowess');
+            denominator = f.*dzdt;
             mtr_raw = -dM ./ denominator;
-            mtr_raw = smooth(mtr_raw,'lowess');
             
             % smooth and dampen to facilitate convergence
             mtr_lim = min(max(mtr_raw,-0.1),1);
