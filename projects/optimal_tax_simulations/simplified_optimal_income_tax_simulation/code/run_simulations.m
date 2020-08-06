@@ -43,7 +43,7 @@ legend({'Baseline','Weak redistributive preferences','Strong redistributive pref
 xlabel('Wage income z');
 ylabel('Marginal tax rate');
 
-fname = [OUTPUT '/Figures/tax_rates_new.pdf'];
+fname = [OUTPUT '/Figures/tax_rates.pdf'];
 fig = gcf;
 fig.PaperPositionMode = 'auto';
 fig_pos = fig.PaperPosition;

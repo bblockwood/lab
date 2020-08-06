@@ -47,50 +47,64 @@ classdef economy
         
         function obj = calibrate(obj,status_quo)
             % Calibrates primitives of model
-            
-            obj.F = cumsum(status_quo.pmf);
-            
-            % Impose pareto tail at high incomes
+                        
+            % Impose pareto tail at high incomes, retain empirical incomes
+            % at low and middle incomes
             zSum = status_quo.pmf .* status_quo.incUS;
             for i = 1:length(status_quo.incUS)
                 zBar(i,1) = sum(zSum(i:end))/sum(status_quo.pmf(i:end));
             end
             target = zBar(89)./status_quo.incUS(89); % set benchmark
-
+            function gap = rescale_top_income(x,incUS,pmf,t)
+              % For finding the factor x for rescaling the top income  
+              inc = [incUS(1:89);zeros(length(pmf(90:end)),1)];
+              inc(end) = incUS(end)*x;
+              l = length(pmf);
+              incSum = zeros(l,1);
+              incSum(end) = pmf(end) .* inc(end);
+              for p = l-1:-1:90
+                  inc(p) = (sum(incSum(p-1:end)) / (t * sum(pmf(p:end)))) / ...
+                      (1 - (pmf(p) / (t * sum(pmf(p:end)))));
+                  incSum(p) = inc(p) * pmf(p);
+              end
+              incSum = pmf .* inc;
+              gap = ((sum(incSum(89:end))/sum(pmf(89:end)))/inc(89)) - ...
+                  ((sum(incSum(90:end))/sum(pmf(90:end)))/inc(90));
+            end
             pmfAlt = [status_quo.pmf(1:89);status_quo.pmf(90:95)./3; ...
                 status_quo.pmf(90:95)./3;status_quo.pmf(90:95)./3; ...
-                status_quo.pmf(96:104);status_quo.pmf(105:3:end).*3];
-            incAlt = [status_quo.incUS(1:89);zeros(length(pmfAlt(90:end)),1)]; % the same at low & middle incomes
-            last = length(incAlt); % index of last cell
+                status_quo.pmf(96:104);status_quo.pmf(105:3:end).*3]; % more sparse at higher incomes
+            fun = @(x) rescale_top_income(x,status_quo.incUS,pmfAlt,target);
+            x = fzero(fun,1);
+            incAlt = [status_quo.incUS(1:89); ...
+                zeros(length(pmfAlt(90:end)),1)]; % the same at low/middle incomes
+            last = length(incAlt); % index of the last cell
             zSum = zeros(last,1);
-            incAlt(end) = status_quo.incUS(end)*.845; 
+            incAlt(end) = status_quo.incUS(end)*x; 
             zSum(end) = pmfAlt(end) .* incAlt(end);
-            for i = last-1:-1:90
+            for i = last-1:-1:90 % fills in income distribution
                 incAlt(i) = (sum(zSum(i-1:end)) / (target * sum(pmfAlt(i:end)))) / ...
                     (1 - (pmfAlt(i) / (target * sum(pmfAlt(i:end)))));
                 zSum(i) = incAlt(i) * pmfAlt(i);
             end
-                        
-            status_quo.consumpUS = interpcon(status_quo.incUS, ...
+            
+            % Initialize values
+            obj.consump = interpcon(status_quo.incUS, ...
                 status_quo.consumpUS,incAlt,'linear','extrap');
-            status_quo.incUS = incAlt;
+            obj.income = incAlt;
             obj.F = cumsum(pmfAlt);
             N = length(obj.F);
+            obj.msww = zeros(N,1);
             
             % Calibrate US tax schedule
             % construct schedule of tax rates: d(z-c)/dz, with kernel
             % smoothing regression
-            mtrRaw = diff(status_quo.incUS - status_quo.consumpUS)./ ...
-                diff(status_quo.incUS);
+            mtrRaw = diff(obj.income - obj.consump)./ ...
+                diff(obj.income);
             r = ksr(obj.F(2:end),mtrRaw); % chooses optimal bandwidth automatically
             obj.inc_mtrs = interpcon(r.x,r.f,obj.F,'linear','extrap');
-            obj.revreq = trapz(obj.F,status_quo.incUS - status_quo.consumpUS);
-            obj.grant = status_quo.consumpUS(1);
-            
-            % Initialize values
-            obj.msww = zeros(N,1);
-            obj.consump = status_quo.consumpUS;
-            obj.income = status_quo.incUS;
+            obj.revreq = trapz(obj.F,obj.income - obj.consump);
+            obj.grant = obj.consump(1);
             
             % Set primitives
             obj.alpha = obj.compute_pareto_weights();
@@ -137,7 +151,6 @@ classdef economy
                 obj.grant = trapz(obj.F,inc_tax) - obj.revreq;
                 obj.consump = obj.grant + obj.income - inc_tax;
                 
-                disp([idx policy_change inc_mtrs_change]);
                 idx = idx+1;
                 if idx > 50000, warning('exceeded iteration limit'); break; end
                 
