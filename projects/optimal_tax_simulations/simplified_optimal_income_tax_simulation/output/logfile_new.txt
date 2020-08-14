@@ -1,46 +1,6 @@
-[Warning: The figure is too large for the page and will be cut off. Resize the
-figure, adjust the output size by setting the figure's PaperPosition property, use
-the 'print' command with either the  '-bestfit' or '-fillpage' options, or use the
-'Best fit' or 'Fill page' options on the 'Print Preview' window.] 
-[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 52)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',52,0)">line 52</a>)] 
-{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.graphics.internal.name', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\+matlab\+graphics\+internal\name.m', 101)" style="font-weight:bold">matlab.graphics.internal.name</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\+matlab\+graphics\+internal\name.m',101,0)">line 101</a>)
-Cannot create output file '..\output\Figures\tax_rates.pdf'.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 71)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',71,0)">line 71</a>)
-pj = matlab.graphics.internal.name( pj );
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 52)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',52,0)">line 52</a>)
-print(fig,fname,'-dpdf');
-} 
-<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\+matlab\+graphics\+internal\name.m',101,1)">101 </a>        error(message('MATLAB:print:CannotCreateOutputFile', pj.FileName));
-if system_dependent('IsDebugMode')==1, dbquit; end
-run_simulations
-[Warning: File not found or permission denied] 
-[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 14)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',14,0)">line 14</a>)] 
-{Error using checkArgsForHandleToPrint
-Handle input argument contains nonhandle values.
-
-Error in checkArgsForHandleToPrint
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print>LocalCreatePrintJob', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 100)" style="font-weight:bold">print>LocalCreatePrintJob</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',100,0)">line 100</a>)
-handles = checkArgsForHandleToPrint(0, varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 38)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',38,0)">line 38</a>)
-[pj, inputargs] = LocalCreatePrintJob(varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 52)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',52,0)">line 52</a>)
-print(fig,fname,'-dpdf');
-} 
-if system_dependent('IsDebugMode')==1, dbquit; end
-run_simulations
-[Warning: File not found or permission denied] 
-[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 14)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',14,0)">line 14</a>)] 
-[Warning: The figure is too large for the page and will be cut off. Resize the
-figure, adjust the output size by setting the figure's PaperPosition property, use
-the 'print' command with either the  '-bestfit' or '-fillpage' options, or use the
-'Best fit' or 'Fill page' options on the 'Print Preview' window.] 
+[Warning: The figure is too large for the page and will be cut off. Resize the figure, adjust the output size by
+setting the figure's PaperPosition property, use the 'print' command with either the  '-bestfit' or '-fillpage'
+options, or use the 'Best fit' or 'Fill page' options on the 'Print Preview' window.] 
 [> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('validate', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m', 146)" style="font-weight:bold">validate</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\private\validate.m',146,0)">line 146</a>)
   In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print', 'C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m', 67)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2019a\toolbox\matlab\graphics\printing\print.m',67,0)">line 67</a>)
   In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_simulations', 'C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m', 52)" style="font-weight:bold">run_simulations</a> (<a href="matlab: opentoline('C:\Users\Afras Sial\Documents\GitHub\lab\projects\optimal_tax_simulations\simplified_optimal_income_tax_simulation\code\run_simulations.m',52,0)">line 52</a>)] 
