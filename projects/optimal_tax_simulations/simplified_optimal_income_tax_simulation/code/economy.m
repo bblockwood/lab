@@ -40,8 +40,11 @@ classdef economy
             % Calibrate model parameters
             obj = obj.calibrate(data);
             
-            % Find equilibrium
+            % Find fixed-point tax schedule
             obj = obj.compute_optimal_taxes();
+            
+            % Confirm optimality with SOC: income non-decreasing in wage
+            assert(min(diff(obj.income)) >= 0);
                         
         end
         
@@ -54,7 +57,7 @@ classdef economy
             for i = 1:length(status_quo.incUS)
                 zBar(i,1) = sum(zSum(i:end))/sum(status_quo.pmf(i:end));
             end
-            target = zBar(86)./status_quo.incUS(86); % set benchmark
+            target = zBar(87)./status_quo.incUS(87); % set benchmark
             function gap = rescale_top_income(x,incUS,pmf,t)
               % For finding the factor x for rescaling the top income  
               inc = [incUS(1:86);zeros(length(pmf(87:end)),1)];
@@ -74,6 +77,8 @@ classdef economy
             pmfAlt = [status_quo.pmf(1:86);status_quo.pmf(87:95)./3; ...
                 status_quo.pmf(87:95)./3;status_quo.pmf(87:95)./3; ...
                 status_quo.pmf(96:104);status_quo.pmf(105:3:end).*3]; % more sparse at higher incomes
+            FAlt = cumsum(pmfAlt);
+            pmfAlt = pmfAlt ./ FAlt(end); % integrates to 1
             fun = @(x) rescale_top_income(x,status_quo.incUS,pmfAlt,target);
             x = fzero(fun,1);
             incAlt = [status_quo.incUS(1:86); ...
@@ -86,6 +91,12 @@ classdef economy
                 incAlt(i) = (sum(zSum(i-1:end)) / (target * sum(pmfAlt(i:end)))) / ...
                     (1 - (pmfAlt(i) / (target * sum(pmfAlt(i:end)))));
                 zSum(i) = incAlt(i) * pmfAlt(i);
+            end
+            
+            % Gradually transition to Pareto tail
+            for j = 87:89
+                k = (90-j)/(4*3);
+                incAlt(j) = incAlt(j)*(1-k) + status_quo.incUS(87)*k;
             end
             
             % Initialize values
