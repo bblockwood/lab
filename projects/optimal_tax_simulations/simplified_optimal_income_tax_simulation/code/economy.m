@@ -5,7 +5,7 @@ classdef economy
                 
         % Primitives
         revreq;             % revenue requirement
-        F;                  % population distribution
+        F;                  % type distribution
         wage;               % skill distribution
         alpha;              % Pareto weights
         lambda;             % marginal value of public funds
@@ -100,12 +100,18 @@ classdef economy
             end
             
             % Initialize values
-            obj.consump = interpcon(status_quo.incUS, ...
+            status_quo.consumpUS = interpcon(status_quo.incUS, ...
                 status_quo.consumpUS,incAlt,'linear','extrap');
             obj.income = incAlt;
             obj.F = cumsum(pmfAlt);
             N = length(obj.F);
             obj.msww = zeros(N,1);
+            
+            % Rescale to ensure national income equals national consumption
+            obj.consump = status_quo.consumpUS .* ...
+                (1 + (trapz(obj.F, obj.income - status_quo.consumpUS) / ...
+                trapz(obj.F, status_quo.consumpUS)));
+            assert(trapz(obj.F,obj.income - obj.consump) < 1e-3);
             
             % Calibrate US tax schedule
             % construct schedule of tax rates: d(z-c)/dz, with kernel
