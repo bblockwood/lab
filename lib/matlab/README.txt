@@ -3,7 +3,6 @@
 
 latexTable.m
 consolidator.m
-interpcon.m
 ksr_vw.m
 ksr.m
 

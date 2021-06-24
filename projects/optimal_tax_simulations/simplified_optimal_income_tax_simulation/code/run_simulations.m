@@ -1,14 +1,12 @@
 function run_simulations()
 % Simulate optimal nonlinear income tax using PSZ income distribution.
 
-clear all;
-addpath(genpath('./functions/'));
+clear;
 addpath(genpath('../../../../lib/matlab/'));
 
-global DATADIR OUTPUT VERBOSE; 
+global DATADIR OUTPUT; 
 DATADIR = '../data'; 
 OUTPUT = '../output';
-VERBOSE = false; % report verbose logging to console?
 
 diaryfile = [OUTPUT '/logfile_new.txt'];
 if (exist(diaryfile,'file')), delete(diaryfile); end
@@ -29,18 +27,20 @@ Results = { economy(D, 'baseline') ...
 
 %% Plot marginal tax rate across income distribution
 for i = 1:4
-    plot(Results{i}.income,Results{i}.inc_mtrs,'Marker','o','Markersize',5);
+    plot(Results{i}.income/1000, Results{i}.inc_mtrs, ...
+        'Marker', 'o', 'Markersize', 5);
     hold on;
 end
 
-ubound = 3*10^5;
-xlim([0 ubound]);
+xlim([0 300]);
+xticks(0:50:300);
 ylim([-.1 1]);
-legend({'Baseline','Weak redistributive preferences','Strong redistributive preferences',...
-    'Redistributive preferences rationalize U.S. income taxes'},'location','northeast');
-% set(gca,'fontsize',14);
-% 
-xlabel('Wage income z');
+yticks(-.1:.1:1);
+legend({'Baseline','Weak redistributive preferences', ...
+    'Strong redistributive preferences',...
+    'Redistributive preferences rationalize U.S. income taxes'}, ...
+    'location','northeast');
+xlabel('Wage income z ($000s)');
 ylabel('Marginal tax rate');
 
 fname = [OUTPUT '/Figures/tax_rates.pdf'];
@@ -87,10 +87,12 @@ function status_quo = load_data()
     c = c(toKeep);
 
     % Convert to 2015 dollars
-    CPI_2015 = 1;
-    CPI_2014 = .99880445;
-    incUS = z*CPI_2015/CPI_2014;
-    consumpUS = c*CPI_2015/CPI_2014;
+    % (Note: CPI for all urban consumers from https://data.bls.gov;
+    %  values correspond to CPI in July; CPI_1984 = 100)
+    CPI_2020 = 259.101;
+    CPI_2014 = 238.250;
+    incUS = z*CPI_2020/CPI_2014;
+    consumpUS = c*CPI_2020/CPI_2014;
 
     status_quo.pmf = pmf;
     status_quo.incUS = incUS;
