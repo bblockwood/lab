@@ -4,9 +4,10 @@ function run_simulations()
 clear;
 addpath(genpath('../../../../lib/matlab/'));
 
-global DATADIR OUTPUT; 
+global DATADIR OUTPUT VERBOSE; 
 DATADIR = '../data'; 
 OUTPUT = '../output';
+VERBOSE = false; % report verbose logging to console?
 
 diaryfile = [OUTPUT '/logfile_new.txt'];
 if (exist(diaryfile,'file')), delete(diaryfile); end

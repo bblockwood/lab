@@ -1,5 +1,6 @@
 classdef economy_invOpt < economy
-    % Overrides baseline economy with redist preferences that rationalize US tax system
+    % Overrides baseline economy with redistributive preferences that 
+    % rationalize US tax system
     
     methods
                 

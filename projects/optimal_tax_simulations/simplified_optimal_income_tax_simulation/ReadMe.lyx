@@ -652,7 +652,7 @@ To update the marginal tax rate schedule in the simulations, we use the
 \begin_inset Formula $\zeta(y(\theta);\theta)=\frac{\partial y(\theta)}{\partial(1-T^{\prime}(\theta))}\cdot\frac{1-T^{\prime}(\theta)}{y(\theta)}$
 \end_inset
 
- and that 
+ and 
 \begin_inset Formula $\int_{s=0}^{\infty}\left(1-g(s)\right)h_{T}(z(s))dz(s)=0$
 \end_inset
 
