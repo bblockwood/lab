@@ -1,0 +1,402 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-bytype
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Mirrlees derivation with income effects
+\end_layout
+
+\begin_layout Standard
+Consider separable utility, 
+\begin_inset Formula 
+\begin{equation}
+U(c,z,w)=u(c)-\psi(z/w),
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $w$
+\end_inset
+
+ is individual wage with density 
+\begin_inset Formula $f(w)$
+\end_inset
+
+.
+ Define the optimal control problem, 
+\end_layout
+
+\begin_layout Standard
+The government maximizes 
+\begin_inset Formula 
+\begin{equation}
+\max_{c(w),z(w)}\int_{w_{0}}^{w_{1}}\left[u(c(w))-\psi\left(\frac{z(w)}{w}\right)\right]f(w)dw
+\end{equation}
+
+\end_inset
+
+subject to incentive compatibility, which we assume is fully characterized
+ by the local FOC for truthful type reporting, 
+\begin_inset Formula 
+\begin{equation}
+\left|\frac{dU(c(\tilde{w}),z(\tilde{w}),w)}{d\tilde{w}}\right|_{\tilde{w}=w}=0
+\end{equation}
+
+\end_inset
+
+for all 
+\begin_inset Formula $w$
+\end_inset
+
+, implying 
+\begin_inset Formula 
+\begin{equation}
+\frac{dU(c(w),z(w),w)}{dw}=\left|\frac{\partial U(c(w),z(w),\tilde{w})}{\partial\tilde{w}}\right|_{\tilde{w}=w}=\psi'\left(\frac{z(w)}{w}\right)\frac{z(w)}{w^{2}}.\label{eq:incentive-compatibility}
+\end{equation}
+
+\end_inset
+
+The optimization is also subject to the resource constraint:
+\begin_inset Formula 
+\[
+\int_{w_{0}}^{w_{1}}\left[z(w)-c(w)\right]f(w)dw.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Like in Mirrlees, we solve this via a Hamiltonian.
+ Let 
+\begin_inset Formula $v(w)$
+\end_inset
+
+ denote the utility assignment of type 
+\begin_inset Formula $w$
+\end_inset
+
+, and take 
+\begin_inset Formula $v(w)$
+\end_inset
+
+ and 
+\begin_inset Formula $z(w)$
+\end_inset
+
+ as the planner's choice variables, with 
+\begin_inset Formula $c(w)$
+\end_inset
+
+ defined implicitly by 
+\begin_inset Formula 
+\begin{equation}
+v(w)=u(c(v(w),z(w),w)))-\psi(z(w)/w).
+\end{equation}
+
+\end_inset
+
+Then the optimal control program is 
+\begin_inset Formula 
+\begin{equation}
+\max_{v(w),z(w)}\int_{w_{0}}^{w_{1}}v(w)f(w)dw
+\end{equation}
+
+\end_inset
+
+subject to the local FOC from (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:incentive-compatibility"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\begin{equation}
+v'(w)=\psi'\left(\frac{z(w)}{w}\right)\frac{z(w)}{w^{2}}
+\end{equation}
+
+\end_inset
+
+the monotonicity constraint 
+\begin_inset Formula $z'(w)>0$
+\end_inset
+
+, and the resource constraint
+\begin_inset Formula 
+\begin{equation}
+\int_{w_{0}}^{w_{1}}\left[z(w)-c(v(w),z(w),w))\right]f(w)dw.
+\end{equation}
+
+\end_inset
+
+By the implicit function theorem, 
+\begin_inset Formula 
+\begin{equation}
+c'_{v}=\frac{1}{u'(c(v(w),z(w),w))}.
+\end{equation}
+
+\end_inset
+
+Letting 
+\begin_inset Formula $z(w)$
+\end_inset
+
+ be the control variable and 
+\begin_inset Formula $v(w)$
+\end_inset
+
+ the state variable, the Hamiltonian is given by 
+\begin_inset Formula 
+\begin{gather}
+\mathcal{H}(v(w),z(w),\mu(w),\lambda,w)=v(w)f(w)+\lambda\left[z(w)-c(v(w),z(w),w)\right]f(w)+\mu(w)v'(w)\\
+=v(w)f(w)+\lambda\left[z(w)-c(v(w),z(w),w)\right]f(w)+\mu(w)\psi'\left(\frac{z(w)}{w}\right)\frac{z(w)}{w^{2}}.
+\end{gather}
+
+\end_inset
+
+with 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ the multiplier on the resource constraint and 
+\begin_inset Formula $\mu(w)$
+\end_inset
+
+ the costate variable.
+ At the optimum, 
+\begin_inset Formula $z(w)$
+\end_inset
+
+ maximizes the Hamiltonian:
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\mathcal{H}}{\partial z(w)}=\lambda\left[1-c_{z}'\right]f(w)+\mu(w)\left[\psi''\left(\frac{z(w)}{w}\right)\frac{z(w)}{w^{3}}+\psi'\left(\frac{z(w)}{w}\right)\frac{1}{w^{2}}\right]=0,
+\end{equation}
+
+\end_inset
+
+implying 
+\begin_inset Formula 
+\begin{equation}
+1-c'_{z}=\frac{1}{\lambda f(w)}\left[\psi''\left(\frac{z(w)}{w}\right)\frac{z(w)}{w^{3}}+\psi'\left(\frac{z(w)}{w}\right)\frac{1}{w^{2}}\right](-\mu(w)).\label{eq:Hopt}
+\end{equation}
+
+\end_inset
+
+Note also that 
+\begin_inset Formula 
+\begin{alignat}{1}
+\frac{\partial\mathcal{H}}{\partial v(w)} & =f(w)\left(1-\lambda c'_{v}\right)\\
+ & =f(w)\left(1-\frac{\lambda}{u'(c(v(w),z(w),w))}\right).
+\end{alignat}
+
+\end_inset
+
+The first-order condition for the Hamiltonian is 
+\begin_inset Formula 
+\begin{alignat}{1}
+\mu'(w) & =-\frac{\partial\mathcal{H}}{\partial v(w)}\\
+ & =\left(\frac{\lambda}{u'(c(v(w),z(w),w))}-1\right)f(w).
+\end{alignat}
+
+\end_inset
+
+Integrating, and using the transversality condition 
+\begin_inset Formula $\mu(w_{1})=0$
+\end_inset
+
+, we have 
+\begin_inset Formula 
+\begin{alignat}{1}
+\mu(w) & =-\int_{w}^{w_{1}}\mu'(s)ds\\
+ & =-\int_{w}^{w_{1}}\left(\frac{\lambda}{u'(c(v(w),z(w),w))}-1\right)f(s)ds.\label{eq:Hfoc}
+\end{alignat}
+
+\end_inset
+
+Using the other transversality condition, 
+\begin_inset Formula $\mu(w_{0})=0$
+\end_inset
+
+, this equation pins down the multiplier on the resource constraint:
+\begin_inset Formula 
+\begin{alignat}{1}
+0 & =\int_{w_{0}}^{w_{1}}\left(\frac{1}{u'(c(v(s),z(s),s))}-\frac{1}{\lambda}\right)f(s)ds\\
+\Rightarrow\frac{1}{\lambda} & =\int_{w_{0}}^{w_{1}}\left(\frac{1}{u'(c(v(s),z(s),s))}\right)f(s)ds\\
+\lambda & =\mathbb{E}\left[\frac{1}{u'_{c}}\right]^{-1}
+\end{alignat}
+
+\end_inset
+
+Plugging (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Hfoc"
+
+\end_inset
+
+) into (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Hopt"
+
+\end_inset
+
+), we can solve the Hamiltonian:
+\begin_inset Formula 
+\begin{multline}
+T'(z(w))=1-c'_{z}\\
+=\frac{1}{\lambda f(w)w}\left[\psi''\left(\frac{z(w)}{w}\right)\frac{z(w)}{w^{2}}+\psi'\left(\frac{z(w)}{w}\right)\frac{1}{w}\right]\int_{w}^{w_{1}}\left(\frac{\lambda}{u'(c(v(w),z(w),w))}-1\right)f(s)ds.\label{eq:Hopt_subs}
+\end{multline}
+
+\end_inset
+
+Finally, consider the term in brackets.
+ We can simplify it using the elasticity of taxable income.
+ Start with the agent's FOC:
+\begin_inset Formula 
+\begin{equation}
+u'(c)(1-T')-\psi'\left(\frac{z}{w}\right)\frac{1}{w}=0.
+\end{equation}
+
+\end_inset
+
+Totally differentiating with respect to a compensated change in 
+\begin_inset Formula $1-T'$
+\end_inset
+
+, we have 
+\begin_inset Formula 
+\begin{equation}
+\frac{dz}{d(1-T')}=\frac{u'(c)}{\psi''\left(\frac{z}{w}\right)\frac{1}{w^{2}}},
+\end{equation}
+
+\end_inset
+
+which we can express as a compensated ETI:
+\begin_inset Formula 
+\begin{gather}
+\zeta_{z}^{c}(w)=\frac{dz}{d(1-T')}\frac{1-T'}{z}=\frac{u'(c)}{\psi''\left(\frac{z}{w}\right)\frac{1}{w^{2}}}\cdot\frac{1-T'}{z}\\
+\Rightarrow\;\psi''\left(\frac{z}{w}\right)\frac{z}{w^{2}}=\frac{u'(c)}{\zeta_{z}^{c}(w)}\cdot(1-T')
+\end{gather}
+
+\end_inset
+
+Using this, and (from the FOC itself) 
+\begin_inset Formula $\psi'\left(\frac{z(w)}{w}\right)\frac{1}{w}=u'(c)(1-T')$
+\end_inset
+
+, the Hamiltonian solution can be written as 
+\begin_inset Formula 
+\begin{equation}
+\frac{T'(z(w))}{1-T'(z(w))}=\frac{u'(c(w))}{\lambda f(w)w}\left[1+\frac{1}{\zeta_{z}^{c}(w)}\right]\int_{w}^{w_{1}}\left(\frac{\lambda}{u'(c(s))}-1\right)f(s)ds.\label{eq:Hopt_subs-1}
+\end{equation}
+
+\end_inset
+
+Finally, use the usual definition of welfare weights as a function of type
+ at the optimum, 
+\begin_inset Formula $g(w):=\frac{u'(c(w))}{\lambda}$
+\end_inset
+
+, we get 
+\begin_inset Formula 
+\begin{alignat}{1}
+\frac{T'(z(w))}{1-T'(z(w))} & =\frac{g(w)}{f(w)w}\left[1+\frac{1}{\zeta_{z}^{c}(w)}\right]\int_{w}^{w_{1}}\left(\frac{1}{g(s)}-1\right)f(s)ds\label{eq:Hopt_subs-1-1}\\
+ & =\frac{1+1/\zeta_{z}^{c}(w)}{f(w)w}\int_{w}^{w_{1}}\frac{g(w)}{g(s)}\left(1-g(s)\right)f(s)ds.
+\end{alignat}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
